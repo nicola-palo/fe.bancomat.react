@@ -265,6 +265,10 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
 }
 
 .btn-primary {
@@ -577,12 +581,14 @@ body {
 
 /* Loading spinner */
 .spinner {
-  width: 20px;
-  height: 20px;
-  border: 2px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
   border-top-color: white;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+  vertical-align: middle;
 }
 
 @keyframes spin {
