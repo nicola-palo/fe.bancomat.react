@@ -103,12 +103,20 @@ export default function ChatWidget() {
                 <div className="chat-subtitle">Assistenza virtuale</div>
               </div>
             </div>
-            <button className="chat-clear-btn" onClick={clearChat} title="Nuova chat">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                <polyline points="1 4 1 10 7 10"/>
-                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-              </svg>
-            </button>
+            <div className="chat-header-actions">
+              <button className="chat-clear-btn" onClick={clearChat} title="Nuova chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                  <polyline points="1 4 1 10 7 10"/>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                </svg>
+              </button>
+              <button className="chat-close-btn" onClick={() => setIsOpen(false)} title="Chiudi chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Messages */}

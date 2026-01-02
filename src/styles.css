@@ -25,19 +25,26 @@
   padding: 0;
 }
 
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  min-height: 100vh;
+  height: 100%;
 }
 
 .app {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .atm-container {
@@ -648,6 +655,25 @@ body {
   background: rgba(255,255,255,0.3);
 }
 
+.chat-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-close-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s;
+}
+
+.chat-close-btn:hover {
+  background: rgba(255,100,100,0.4);
+}
+
 .chat-messages {
   flex: 1;
   overflow-y: auto;
@@ -783,32 +809,238 @@ body {
 /* Responsive */
 @media (max-width: 520px) {
   .app {
-    padding: 20px 16px;
+    padding: 12px;
+    justify-content: flex-start;
+  }
+  
+  .atm-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .header {
+    margin-bottom: 16px;
+  }
+  
+  .logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+  }
+  
+  .logo svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+  }
+  
+  .phase-indicator {
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  
+  .phase-dot {
+    width: 10px;
+    height: 10px;
   }
   
   .card {
-    padding: 24px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .card-description {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  
+  .input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  
+  .input-card {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+  .input-pin {
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+  
+  .btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  
+  .account-info {
+    padding: 16px;
+    margin-bottom: 16px;
   }
   
   .account-balance {
     font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .account-details {
+    gap: 12px;
+    padding-top: 12px;
+  }
+  
+  .operations {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .op-btn {
+    padding: 14px 12px;
+  }
+  
+  .op-btn-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  
+  .op-btn-label {
+    font-size: 13px;
+  }
+  
+  .input-amount {
+    font-size: 20px;
+  }
+  
+  .amount-section {
+    margin-top: 12px;
+    padding-top: 12px;
   }
   
   .jwt-decoded {
     grid-template-columns: 1fr;
   }
-
+  
+  .jwt-section {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+  
+  .exit-section {
+    margin-top: 16px;
+  }
+  
+  .card-visual {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .card-number {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  
+  /* Chat mobile fullscreen */
   .chat-window {
-    width: calc(100vw - 32px);
-    height: calc(100vh - 140px);
-    bottom: 90px;
-    right: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    z-index: 1001;
   }
 
   .chat-fab {
     bottom: 16px;
     right: 16px;
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .chat-fab svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .chat-header {
+    padding: 12px 16px;
+  }
+  
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .chat-messages {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .chat-msg-content {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .chat-input-area {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .chat-input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .chat-send-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 521px) and (max-width: 768px) {
+  .app {
+    padding: 24px 20px;
+  }
+  
+  .atm-container {
+    max-width: 440px;
+  }
+  
+  .chat-window {
+    width: 360px;
+    height: 480px;
+    bottom: 90px;
+    right: 20px;
+  }
+}
+
+/* Safe area for notched devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .app {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+  
+  .chat-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+  
+  .chat-input-area {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 }
