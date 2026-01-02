@@ -87,6 +87,47 @@ body {
   color: var(--text-muted);
 }
 
+/* Server Warning Card */
+.warning-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  border: 2px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  animation: slideUp 0.4s ease;
+}
+
+.warning-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.warning-content {
+  flex: 1;
+}
+
+.warning-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c53030;
+  margin-bottom: 6px;
+}
+
+.warning-text {
+  font-size: 13px;
+  color: #742a2a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.warning-text strong {
+  color: #c53030;
+}
+
 /* Phase indicator */
 .phase-indicator {
   display: flex;
