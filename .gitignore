@@ -1,0 +1,34 @@
+# Dipendenze
+node_modules/
+
+# Build
+dist/
+build/
+
+# Ambiente locale
+.env
+.env.local
+.env.*.local
+
+# Keep example files
+!.env.example
+!.env.development
+!.env.production
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Log
+*.log
+npm-debug.log*
+
+# Test
+coverage/
