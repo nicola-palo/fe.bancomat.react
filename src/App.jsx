@@ -315,18 +315,19 @@ export default function App() {
           <p className="subtitle">Simulatore bancomat</p>
         </header>
 
-        {/* Server Warning */}
-        <div className="warning-card">
-          <div className="warning-icon">⚠️</div>
-          <div className="warning-content">
-            <div className="warning-title">Attenzione: Server in modalità risparmio</div>
-            <p className="warning-text">
-              Il backend è ospitato su un server gratuito che entra in modalità riposo dopo alcuni minuti di inattività. 
-              La prima richiesta e il primo messaggio alla chat assistenza potrebbe richiedere <strong>circa 2 minuti</strong> per la risposta. 
-              Le richieste successive saranno immediate.
-            </p>
+        {/* Server Warning - solo nella prima fase */}
+        {phase === PHASE.INSERT_CARD && (
+          <div className="warning-card">
+            <div className="warning-icon">⚠️</div>
+            <div className="warning-content">
+              <div className="warning-title">Attenzione: Server in modalità risparmio</div>
+              <p className="warning-text">
+                Il backend è ospitato su un server gratuito che entra in modalità riposo dopo alcuni minuti di inattività. 
+                La prima richiesta potrebbe richiedere <strong>circa 2 minuti</strong>. Le successive saranno immediate.
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Phase indicator */}
         <div className="phase-indicator">

@@ -2,11 +2,14 @@ import { useState, useRef, useEffect } from 'react'
 
 const CHAT_API = import.meta.env.VITE_CHAT_API || '/api/chat'
 
+const INITIAL_MESSAGES = [
+  { role: 'assistant', content: 'Ciao! Sono l\'assistente ATM. Come posso aiutarti?' },
+  { role: 'system-warning', content: '⚠️ La prima risposta potrebbe richiedere circa 2 minuti perché il server è in modalità risparmio energetico. Le risposte successive saranno immediate.' }
+]
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Ciao! Sono l\'assistente ATM. Come posso aiutarti?' }
-  ])
+  const [messages, setMessages] = useState(INITIAL_MESSAGES)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const messagesEndRef = useRef(null)

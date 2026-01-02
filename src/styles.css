@@ -772,6 +772,22 @@ body {
   border-bottom-right-radius: 4px;
 }
 
+/* System warning message in chat */
+.chat-message.system-warning {
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.chat-message.system-warning .chat-msg-content {
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  color: #742a2a;
+  border: 1px solid #feb2b2;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
 .chat-typing {
   display: flex;
   gap: 4px;
