@@ -323,7 +323,7 @@ export default function App() {
               <div className="warning-title">Attenzione: Server in modalità risparmio</div>
               <p className="warning-text">
                 Il backend è ospitato su un server gratuito che entra in modalità riposo dopo alcuni minuti di inattività. 
-                La prima richiesta potrebbe richiedere <strong>circa 2 minuti</strong>. Le successive saranno immediate.
+                La prima richiesta potrebbe richiedere <strong>circa 5 minuti o più</strong>. Le successive saranno immediate.
               </p>
             </div>
           </div>
